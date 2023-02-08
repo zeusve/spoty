@@ -14,4 +14,7 @@ public interface TrackRepository extends JpaRepository<Track,Long> {
     @Query("select track from Track track where ?1 member of track.genres")
     List<Track> findByGenre (Genre genre);
 
+    List<Track> findByNameContaining(String search);
+
+    List<Track> findBySearch(String search);
 }
