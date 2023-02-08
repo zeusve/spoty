@@ -15,8 +15,12 @@ public class SearchRestController {
         this.searchService = searchService;
     }
 
-    @GetMapping("/")
-    public SearchDTO searchDTO (@RequestParam String search){
+    @GetMapping("/name")
+    public SearchDTO searchDTO (String search){
         return searchService.search(search);
+    }
+    @GetMapping("/name1")
+    public SearchDTO searchDTO (){
+        return searchService.search1();
     }
 }

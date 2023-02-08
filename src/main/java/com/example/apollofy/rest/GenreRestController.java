@@ -48,7 +48,6 @@ public class GenreRestController {
         if (genreDto.getId() == null) throw new RuntimeException("Invalid id for genre: id null");
         if (id == null) throw new RuntimeException("Invalid id for searching the genre: id null");
         if (!genreRepository.existsById(id)) throw new RuntimeException("Entity Genre not found in data base: entity not found");
-        //if (!Objects.equals(id, genreDto.getId())) throw new RuntimeException("The gender's id searched is not found in data base: id not found");
         if (!genreDto.getId().equals(id)) throw new RuntimeException("The gender's id searched is not found in data base: id not found");
         return genreService.updateOneGenre(genreDto);
     }
@@ -56,12 +55,7 @@ public class GenreRestController {
     //GET /api/genres/{id}
     @GetMapping("/{id}")
     public Genre getGenreById(@PathVariable Long id) {
-        //ToDo: duda: ¿de quién es responsabilidad revisar el Optional, del controller o del service?
         return genreService.getGenre(id);
-        //puede encontrarlo o no, por esto un Optional
-        //Optional<Genre> genreOptional = genreRepository.findById(id);
-        //if(genreOptional.isEmpty()) throw new RuntimeException("The genre id " + id + " is invalid");
-        //return genreOptional.get();
     }
 
     //DELETE /api/genres/{id}
