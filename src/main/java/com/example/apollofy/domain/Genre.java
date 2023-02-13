@@ -1,9 +1,11 @@
 package com.example.apollofy.domain;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 // primero el administrador de la aplicación crea los géneros, y luego los artistas crean sus tracks y le da una lista de géneros --> en track @manytomany a géneros
 @Entity

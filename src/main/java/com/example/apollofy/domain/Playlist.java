@@ -1,10 +1,10 @@
 package com.example.apollofy.domain;
 
 import com.example.apollofy.service.dto.PlaylistDTO;
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 

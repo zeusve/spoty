@@ -7,12 +7,12 @@ import com.example.apollofy.service.dto.AddTracksToPlaylistDTO;
 import com.example.apollofy.service.dto.PlaylistDTO;
 import com.example.apollofy.utilites.ElementNotFoundException;
 import com.example.apollofy.utilites.PlaylistAlreadyExistsException;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.transaction.Transactional;
+
 
 @Service
 @Transactional

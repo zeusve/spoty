@@ -1,7 +1,6 @@
 package com.example.apollofy.service.dto;
 
-
-import jakarta.validation.constraints.NotNull;
+import org.jetbrains.annotations.NotNull;
 
 public record PlaylistDTO (
         Long id,

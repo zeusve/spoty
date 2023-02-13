@@ -19,16 +19,16 @@ public class SearchService {
     private UserRepository userRepository;
     private PlaylistRepository playlistRepository;
 
+    public SearchService(TrackRepository trackRepository, UserRepository userRepository, PlaylistRepository playlistRepository) {
+        this.trackRepository = trackRepository;
+        this.userRepository = userRepository;
+        this.playlistRepository = playlistRepository;
+    }
+
     public SearchDTO search(String search) {
         return new SearchDTO(trackRepository.findByTrackContaining(search),
                 userRepository.findByUserContaining(search),
                 playlistRepository.findByPlaylistContaining(search));
     }
 
-
-    public SearchDTO search1() {
-        return new SearchDTO(trackRepository.findAll(),
-                userRepository.findAll(),
-                playlistRepository.findAll());
-    }
 }

@@ -5,9 +5,8 @@ import com.example.apollofy.domain.Track;
 import com.example.apollofy.repository.GenreRepository;
 import com.example.apollofy.repository.TrackRepository;
 import com.example.apollofy.service.dto.GenreDTO;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
-
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,8 +61,7 @@ public class GenreService {
     public Genre getGenre(Long id) {
         Optional<Genre> genreOptional = genreRepository.findById(id);
         if (genreOptional.isEmpty()) throw new RuntimeException("Genre id "+id+" doesn't exist");
-        Genre genre = genreOptional.get();
-        return genre;
+        return genreOptional.get();
     }
 
 }

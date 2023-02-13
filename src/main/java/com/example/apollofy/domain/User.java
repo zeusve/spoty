@@ -1,13 +1,13 @@
 package com.example.apollofy.domain;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import javax.persistence.*;
 
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Usuario")
+@Table(name = "usuario")
 public class User {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
