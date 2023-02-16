@@ -3,13 +3,18 @@ package com.example.apollofy.service.dto;
 import com.example.apollofy.domain.Playlist;
 import com.example.apollofy.domain.Track;
 import com.example.apollofy.domain.User;
-import javax.validation.constraints.NotNull;
-import java.util.List;
+import lombok.Data;
 
-public class SearchDTO {
-    @NotNull private List<Track> trackList;
-    @NotNull private List<User> userList;
-    @NotNull private List<Playlist> playlistList;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.util.List;
+import java.util.function.Consumer;
+
+@Data
+public class SearchDTO implements Serializable {
+    @NotNull List<Track> trackList;
+    @NotNull List<User> userList;
+    @NotNull List<Playlist> playlistList;
 
     public SearchDTO (){}
 
@@ -17,17 +22,7 @@ public class SearchDTO {
         this.trackList = trackList;
         this.userList = userList;
         this.playlistList = playlistList;
-        System.out.println("canciones "+this.trackList);
-        System.out.println("users "+this.userList);
-        System.out.println("play list "+this.playlistList);
+
     }
 
-    @Override
-    public String toString() {
-        return "{" +
-                "trackList=" + trackList +
-                ", userList=" + userList +
-                ", playlistList=" + playlistList +
-                '}';
-    }
 }

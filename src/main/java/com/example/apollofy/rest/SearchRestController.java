@@ -16,10 +16,8 @@ public class SearchRestController {
     }
 
     @GetMapping( "/{search}")
-    public String searchDTO (@PathVariable String search){
-        SearchDTO searchDTO;
-        searchDTO = searchService.search(search);
-        return searchDTO.toString();
+    public SearchDTO searchDTO (@PathVariable String search){
+        return searchService.search(search);
     }
 
 }
